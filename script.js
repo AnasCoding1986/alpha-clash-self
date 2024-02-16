@@ -1,6 +1,9 @@
 function play() {
-    // let startSection = document.getElementById("start");
-    // startSection.classList.add("hidden");
     addClass("start", "hidden");
-    removeClass("play", "hidden")
+    removeClass("play", "hidden");
+    continueGame();
+}
+
+function continueGame() {
+    generateRandomAlphabet()
 }

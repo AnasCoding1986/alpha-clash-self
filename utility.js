@@ -13,3 +13,10 @@ function removeClass(id, addedClass) {
     let elm = document.getElementById(id);
     elm.classList.remove(addedClass);
 }
+function generateRandomAlphabet() {
+    const alphabets = "abcdefghijklmnopqrstuvwxyz";
+    const alphabetArr = alphabets.split("");
+    let randomNum = Math.floor(Math.random()*26);
+    let alphabet = alphabetArr[randomNum];
+    document.getElementById("randomAlphabet").innerHTML = alphabet;
+}
