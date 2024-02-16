@@ -5,5 +5,5 @@ function play() {
 }
 
 function continueGame() {
-    generateRandomAlphabet()
+    generateRandomAlphabet();
 }

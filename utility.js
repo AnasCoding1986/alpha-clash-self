@@ -19,4 +19,19 @@ function generateRandomAlphabet() {
     let randomNum = Math.floor(Math.random()*26);
     let alphabet = alphabetArr[randomNum];
     document.getElementById("randomAlphabet").innerHTML = alphabet;
+    console.log(alphabet);
+}
+function setBackgroundColor() {
+    let currentAlphabetDiv = document.getElementById("randomAlphabet");
+    let currentAlphabetDivText = currentAlphabetDiv.innerText;
+    let desiredCurrentAlphabetDivText = currentAlphabetDivText.toLowerCase();
+    const kbdElements = document.querySelectorAll('.kbd');
+    kbdElements.forEach(kbd => {
+        const id = kbd.id;
+        if (id === desiredCurrentAlphabetDivText) {
+            kbd.style.backgroundColor = 'yellow'; // Change background color
+        }
+    });
+
+
 }
