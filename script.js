@@ -1,6 +1,12 @@
 function play() {
     addClass("start", "hidden");
     removeClass("play", "hidden");
+    addClass("final", "hidden");
+
+    removeBackgroundColor();
+    setNewVal("lifeId", 5);
+    setNewVal("scoreId", 0);
+
     continueGame();
 }
 
@@ -11,6 +17,7 @@ function continueGame() {
 
 document.addEventListener('keyup', function matchingKey(e) {
     let pressedKey = e.key;
+    console.log(pressedKey);
 
     if (currentVal("randomAlphabet").toLowerCase() === pressedKey) {
         let previousScore = getNumVal("scoreId");
@@ -19,6 +26,7 @@ document.addEventListener('keyup', function matchingKey(e) {
         removeBackgroundColor();
         generateRandomAlphabet();
         setBackgroundColor();
+        document.getElementById("resultSpan").innerText = updatedScore;
         
 
     }else{
@@ -29,5 +37,11 @@ document.addEventListener('keyup', function matchingKey(e) {
             addClass("play", "hidden");
             removeClass("final", "hidden");
         }
+    }
+
+    if (pressedKey === "Escape") {
+        addClass("play", "hidden");
+        removeClass("start", "hidden");
+        addClass("final", "hidden");
     }
 });
