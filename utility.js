@@ -20,6 +20,10 @@ function currentVal(id) {
     let elmText = elm.innerText;
     return elmText;
 }
+function setNewVal(id, value) {
+    let elm = document.getElementById(id);
+    elm.innerText = value;
+}
 function generateRandomAlphabet() {
     const alphabets = "abcdefghijklmnopqrstuvwxyz";
     const alphabetArr = alphabets.split("");
@@ -32,4 +36,16 @@ function setBackgroundColor() {
     let currentAlphabetDivText = currentAlphabetDiv.innerText;
     let desiredCurrentAlphabetDivText = currentAlphabetDivText.toLowerCase();
     document.getElementById(desiredCurrentAlphabetDivText).classList.add("bg-color");
+}
+function removeBackgroundColor() {
+    let currentAlphabetDiv = document.getElementById("randomAlphabet");
+    let currentAlphabetDivText = currentAlphabetDiv.innerText;
+    let desiredCurrentAlphabetDivText = currentAlphabetDivText.toLowerCase();
+    document.getElementById(desiredCurrentAlphabetDivText).classList.remove("bg-color");
+}
+function getNumVal(id) {
+    let elm = document.getElementById(id);
+    let elmTxt = elm.innerText;
+    let desiredElmTxt = parseInt(elmTxt);
+    return desiredElmTxt;
 }
